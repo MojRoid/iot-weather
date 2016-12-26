@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="colder">#ffff00</color>
+    <color name="warmer">#ff0000</color>
+    <color name="rain">#0000ff</color>
+</resources>

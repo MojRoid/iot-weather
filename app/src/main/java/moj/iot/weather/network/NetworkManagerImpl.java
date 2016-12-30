@@ -14,8 +14,8 @@ public class NetworkManagerImpl implements NetworkManager {
     private final String mDarkSkyApiKey;
 
     @Inject
-    public NetworkManagerImpl(Retrofit marvelApi, @ForApiKey String darkSkyApiKey) {
-        mDarkSkyRestApi = marvelApi.create(DarkSkyRestApi.class);
+    public NetworkManagerImpl(Retrofit retrofit, @ForApiKey String darkSkyApiKey) {
+        mDarkSkyRestApi = retrofit.create(DarkSkyRestApi.class);
         mDarkSkyApiKey = darkSkyApiKey;
     }
 

@@ -1,6 +1,5 @@
 *.iml
 .gradle
-.gitignore
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries

@@ -15,7 +15,7 @@ public class WeatherUtils {
 
     public static final double PRECIPITATION_PROBABILITY_THRESHOLD = 0.5;
     private static final int SLEEP_START = 23;
-    private static final int SLEEP_END = 7;
+    private static final int SLEEP_END = 6;
 
     /**
      * Returns a list of old minutes.

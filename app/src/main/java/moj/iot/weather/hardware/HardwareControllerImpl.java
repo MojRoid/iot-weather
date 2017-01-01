@@ -177,7 +177,8 @@ public class HardwareControllerImpl implements HardwareController, Button.OnButt
             text = mContext.getString(R.string.none);
         } else {
             DateTime currentDateTime = new DateTime(System.currentTimeMillis());
-            int timeDifference = (nextRainMinute.getTime().getMinuteOfHour() + 60) - currentDateTime.getMinuteOfHour();
+            int hour = nextRainMinute.getTime().getHourOfDay() == currentDateTime.getHourOfDay() ? 0 : 60;
+            int timeDifference = (nextRainMinute.getTime().getMinuteOfHour() + hour) - currentDateTime.getMinuteOfHour();
             if (timeDifference <= 0) {
                 text = mContext.getString(R.string.now);
             } else {

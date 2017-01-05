@@ -170,23 +170,18 @@ public class HardwareControllerImpl implements HardwareController, Button.OnButt
         if (weather == null) {
             return;
         }
-        String text;
         Minute nextRainMinute = WeatherUtils.getNextRainMinute(weather.getMinutely().getMinutes());
 
-        if (nextRainMinute == null) {
-            text = mContext.getString(R.string.none);
-        } else {
+        if (nextRainMinute != null) {
             DateTime currentDateTime = new DateTime(System.currentTimeMillis());
             int hour = nextRainMinute.getTime().getHourOfDay() == currentDateTime.getHourOfDay() ? 0 : 60;
             int timeDifference = (nextRainMinute.getTime().getMinuteOfHour() + hour) - currentDateTime.getMinuteOfHour();
             if (timeDifference <= 0) {
-                text = mContext.getString(R.string.now);
+                mDisplay.display(mContext.getString(R.string.now));
             } else {
-                text = mContext.getString(R.string.in) + timeDifference;
+                mDisplay.display(mContext.getString(R.string.in) + timeDifference);
             }
         }
-
-        mDisplay.display(text);
     }
 
     private void displayTemperature(@Nullable Weather weather) {

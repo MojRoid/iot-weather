@@ -77,7 +77,7 @@ public class WeatherUtils {
         String formattedTemperature;
         String defaultUnit = "c";
         int roundedTemperature = (int) (temperature + 0.5);
-        if (roundedTemperature <= -10 || roundedTemperature >= 10) {
+        if (roundedTemperature < 0 || roundedTemperature >= 10) {
             formattedTemperature = String.format(Locale.ENGLISH, "%d%s", roundedTemperature, defaultUnit);
         } else {
             formattedTemperature = String.format(Locale.ENGLISH, " %d%s", roundedTemperature, defaultUnit);
